@@ -4,29 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/styles/index.css" />
+    <link rel="stylesheet" href="./assets/styles/libs/materialize.min.css" />
+    <link rel="stylesheet" href="./assets/styles/index.css">
+    <link href="./assets/styles/libs/google-fonts.css" rel="stylesheet">
     <title>Alura Typer</title>
 </head>
 <body>
-    <main>
-        <h1>Alura Typer</h1>
-        <p class="frase">Oi, beleza?</p>
-        <ul class="informacoes">
+    <main class="container">
+        <h1 class="center">Alura Typer</h1>
+        <p class="center frase">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero magnam velit cupiditate dignissimos quibusdam ipsum delectus, ipsa accusantium mollitia soluta labore, tempore explicabo dolor sit dolorum maxime consequuntur molestias dolorem?</p>
+        <ul class="center informacoes">
             <li>
+                <i class="small material-icons icones">description</i>
                 <span id="tamanhoDaFrase">0</span>
                 Palavras
             </li>
             <li>
-                <span id="tempo-digitacao">10</span>
+                <i class="small material-icons icones">query_builder</i>
+                <span id="tempo-digitacao">5</span>
                 Segundos
             </li>
         </ul>
 
         <textarea class="campo-digitacao" cols="30" rows="10"></textarea>
 
-        <button id="botao-reiniciar">Reiniciar Jogo</button>
+        <div class="botoes">
+            <button id="botao-reiniciar" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">restore</i></button>
+        </div>
 
-        <ul>
+
+        <ul class="center">
             <li>
                 <span id="contador-caracteres">0</span>
                 Caracteres
