@@ -69,12 +69,35 @@ function inserePlacar() {
     const usuario = 'Filipi';
     const numeroPalavras = $('#contador-palavras').text();
 
-    const linha = '<tr>' + 
-                        '<td>' + usuario + '</td>' +
-                        '<td>' + numeroPalavras + '</td>' +
-                  '</tr>';
+    const linha = novaLinha(usuario, numeroPalavras);
+    linha.find('.botao-remover').click(removeLinha());
+
+    function novaLinha(usuario, numeroPalavras) {
+        const newLinha = $('<tr>');
+        const colunaUsuario = $('<td>').text(usuario);
+        const colunaPalavras = $('<td>').text(numeroPalavras);
+        const colunaDelete = $('<td>');
+
+        const link = $('<a>').addClass('botao-remover').attr('href', '#');
+        const icone = $('<i>').addClass('small').addClass('material-icons').text('delete');
+
+        link.append(icone);
+
+        colunaDelete.append(link);
+
+        linha.append(colunaUsuario);
+        linha.append(colunaPalavras);
+        linha.append(colunaDelete);
+
+        return newLinha;
+    }
 
     corpoTabela.prepend(linha);
+}
+
+function removeLinha(event) {
+    event.preventDefault();
+    $(this).parent().parent().remove();
 }
 
 function reiniciaJogo() {
